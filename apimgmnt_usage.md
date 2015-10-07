@@ -27,6 +27,26 @@ There is no need to attach APIs to a specific application. All APIs can be used 
 
 #Generating sandbox users
 
+Within the platform you are able to create users (customers) with accounts and a generated transaction history. Easiest way to do this is through the documentation page. Here you will find the sandbox services :
+
+![Sandbox services](images/sandbox-services.png)
+
+- GET/account  
+Will return all the created accounts you have created (maximum of 3)
+- POST/account  
+Will create a new account, and return the new credentials (login, password and tincode) to a maximum of three accounts.
+- DELETE/account  
+For removing an account based on username (user = username)
+- GET/addressbook  
+Will return an addressbook of all sandbox users. This can be used to identify accounts where you can exchange payments.
+
+When creating transactions, the sending account and beneficiary account will be debited/credited only when those accounts belong to the same sandbox. Otherwise only the sending account will be debited. It is not possible to create transactions to other sandboxes (which are tied to an API-key).
+
+For every account that is created the platform will generate a transaction history. This history will be antedated from the current date to 6 months in the past. Every transaction line is labeled. To give you an idea on this labels, and the monthly spending in a generated account :
+
+![Sandbox services](images/transaction-history.png)
+
+
 #Inviting co-developers
 following screenshot depicts the step you should take to invite co-developers. Be sure that you first login to the environment with your credentials.
 
