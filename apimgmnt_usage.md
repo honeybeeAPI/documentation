@@ -3,11 +3,12 @@
 # Contents
 - [Creating an application](#creating-an-application)
 - [Generating sandbox users](#generating-sandbox-users)
-- [Inviting co-developers](#Inviting-co-developers)
-- [Using API keys in the documentation portal](#Using-API-keys-in-the-documentation-portal)
+- [Inviting your developers](#Inviting-your-developers)
+- [Using API keys in the documentation portal](#Using-api-keys-in-the-documentation-portal)
 - [Using oAuth2 in the documentation portal](#using-oauth2-in-the-documentation-portal)
 - [Using oAuth2 outside the documentation portal](#using-oauth2-outside-the-documentation-portal)
 - [Creating transactions](#creating-transactions)
+- [Sample application](#sample-application)
 
 #Creating an application
 The first thing you should do after logging into the environment is create an application. You can create multiple applications, but you probably are building one app for the hackaton. An application holds the keys needed to call APIs.
@@ -48,7 +49,7 @@ For every account that is created the platform will generate a transaction histo
 ![Sandbox services](images/transaction-history.png)
 
 
-#Inviting co-developers
+#Inviting your developers
 following screenshot depicts the step you should take to invite co-developers. Be sure that you first login to the environment with your credentials.
 
 ![Co developers](images/invitations.png)
@@ -97,3 +98,55 @@ Please read the README for setting up this example.
 although not extensive, this should provide you with enough information on setting up your own app.
 
 #Creating transactions
+
+#Sample application
+BalanceSample is a cordova based example application for implementing a login sequence and getting a current account balance.
+
+prerequisites :
+apache cordova
+https://cordova.apache.org/docs/en/4.0.0/guide_cli_index.md.html
+
+clone this application and cd into the cloned directory
+```
+git clone https://github.com/honeybeeAPI/BalanceSample.git
+cd BalanceSample
+```
+
+Add your platform with the following command :
+
+```
+cordova platform add ios
+```
+or
+```
+cordova platform add android
+```
+
+Install the needed inappbrowser plugin :
+
+```
+cordova plugin add org.apache.cordova.inappbrowser
+```
+
+And the whitelist plugin :
+
+```
+cordova plugin add cordova-plugin-whitelist
+```
+
+Important!  
+copy www/js/apiclient-placeholder.js to www/js/apiclient.js
+Fill in the clientId and clientSecret variables in the www/js/apiclient.js file with your API application credentials
+
+Run or emulate the application with :
+
+```
+cordova run ios
+```
+or
+```
+cordova run android
+```
+
+
+If you are experiencing an authorization error, you probably forgot to fill in the right App credentials in the apiclient.js file.
