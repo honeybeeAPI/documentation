@@ -109,7 +109,7 @@ For example october 30 07:00, 2015 is written as 2015-10-30T07:00:00
 
 #Creating transactions
 Creating transactions (transfer money) is a two step process. In the production implementation this will include signing with the Rabobank scanner device. Within this platform it is simplified by signing with a simple tin-code.  
-The first step will be creating a transfer through the POST/Transfer API which takes the followinf information :  
+The first step will be creating a transfer through the POST/Transfer API which takes the following information :  
 ```
 {
   "Amount": 0,
@@ -128,7 +128,8 @@ The response will be a transaction key and the posted transfer. At this moment y
 By calling the PUT/Transfer you will 'sign' the transaction with a tin-code and effectuate the transaction. You will find the tin-code to use in your sandbox account (GET/account).  
 
 **The transaction will debet the source account with the amount provided, and will credit the beneficiary account only when this account is present in your sandbox.  
- It is not possible to create transactions between different sandbox (API key) accounts!**
+ It is not possible to credit accounts in different sandboxes!**  
+ The addressbook api in the sandbox section provides you with a list of accounts in your current sandbox. 
 
 
 #Sample application
