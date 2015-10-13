@@ -7,6 +7,7 @@
 - [Using API keys in the documentation portal](#Using-api-keys-in-the-documentation-portal)
 - [Using oAuth2 in the documentation portal](#using-oauth2-in-the-documentation-portal)
 - [Using oAuth2 outside the documentation portal](#using-oauth2-outside-the-documentation-portal)
+- [Data types in APIs](#data-types-in-apis)
 - [Creating transactions](#creating-transactions)
 - [Sample application](#sample-application)
 
@@ -97,7 +98,38 @@ https://github.com/honeybeeAPI/BalanceSample
 Please read the README for setting up this example.
 although not extensive, this should provide you with enough information on setting up your own app.
 
+#Data types in APIs
+On the documentation page you will find the required data types in the model section of the API description.
+
+![Model](images/model.png)
+
+Especially the date type should be investigated. This is in the format of a Json date ISO8601 (https://en.wikipedia.org/wiki/ISO_8601).  
+For example october 30 07:00, 2015 is written as 2015-10-30T07:00:00
+
+
 #Creating transactions
+Creating transactions (transfer money) is a two step process. In the production implementation this will include signing with the Rabobank scanner device. Within this platform it is simplified by signing with a simple tin-code.  
+The first step will be creating a transfer through the POST/Transfer API which takes the followinf information :  
+```
+{
+  "Amount": 0,
+  "Currency": "EUR",
+  "FromAccount": "<IBAN source account>",
+  "BeneficiaryAccount": "<IBAN destination account>",
+  "BeneficiaryName": "<Free to use name>",
+  "ExecutionDate": "<Json date ISO8601>",
+  "Description": "<Free text>",
+  "Urgent": true
+}
+```
+As is documented above, the currency should be fixed at Euro's. The execution date is stored, but not enforced. At this moment it is not possible to create transfers in the future.
+
+The response will be a transaction key and the posted transfer. At this moment you have created an open (not signed) transfer.  
+By calling the PUT/Transfer you will 'sign' the transaction with a tin-code and effectuate the transaction. You will find the tin-code to use in your sandbox account (GET/account).  
+
+**The transaction will debet the source account with the amount provided, and will credit the beneficiary account only when this account is present in your sandbox.  
+ It is not possible to create transactions between different sandbox (API key) accounts!**
+
 
 #Sample application
 BalanceSample is a cordova based example application for implementing a login sequence and getting a current account balance.
