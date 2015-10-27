@@ -15,7 +15,10 @@
 
 #How to get a key
 When you want to use the APIs in real-time you will need an user account in the honeybee environment.
-A user account can be retrieved at the Rabobank desk. A Rabobank representative  will provide the team leader with login credentials for managing his/her team. For this we will need a team name and a team leader email address.
+A user account can be retrieved at the **Rabobank desk**.
+![Change password](images/tafelkleed.png)
+
+A Rabobank representative  will provide the team leader with login credentials for managing his/her team. For this we will need a team name and a team leader email address.
 
 Important!!  
 Please change your password when you first access the portal!
@@ -26,7 +29,7 @@ Please change your password when you first access the portal!
 The rest of this documentation describes the additional tasks for getting up and running with the API playground.
 
 #Creating an application
-The first thing you should do after logging into the environment is create an application. You can create multiple applications, but you probably are building one app for the hackaton. An application holds the keys needed to call APIs.
+The next thing you should do after logging into the environment is create an application, or rename the one which is generated for you at the start. You can create multiple applications, but you probably are building one app for the hackaton. An application holds the keys needed to call APIs.
 
 ![Application creation](images/applications1.png)
 
