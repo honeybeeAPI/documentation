@@ -158,7 +158,7 @@ cordova platform add android
 Install the needed inappbrowser plugin :
 
 ```
-cordova plugin add org.apache.cordova.inappbrowser
+cordova plugin add cordova-plugin-inappbrowser
 ```
 
 And the whitelist plugin :
