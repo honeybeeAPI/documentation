@@ -2,8 +2,8 @@
 
 # Contents
 - [Creating an application](#creating-an-application)
-- [Generating sandbox users](#generating-sandbox-users)
-- [Inviting your developers](#Inviting-your-developers)
+- [Generating sandbox accounts](#generating-sandbox-accounts)
+- [Adding teammembers](#adding-teammembers)
 - [Using API keys in the documentation portal](#Using-api-keys-in-the-documentation-portal)
 - [Using oAuth2 in the documentation portal](#using-oauth2-in-the-documentation-portal)
 - [Using oAuth2 outside the documentation portal](#using-oauth2-outside-the-documentation-portal)
@@ -28,7 +28,7 @@ After the application is created you can still see the client id (API key) in th
 
 There is no need to attach APIs to a specific application. All APIs can be used to a maximum of 10.000 call's per day. If you need more, please contact the team.
 
-#Generating sandbox users
+#Generating sandbox accounts
 
 Within the platform you are able to create users (customers) with accounts and a generated transaction history. Easiest way to do this is through the documentation page. Here you will find the sandbox services (be sure to login before using these services) :
 
@@ -50,7 +50,7 @@ For every account that is created the platform will generate a transaction histo
 ![Sandbox services](images/transaction-history.png)
 
 
-#Inviting your developers
+#Adding teammembers
 following screenshot depicts the step you should take to invite co-developers. Be sure that you first login to the environment with your credentials.
 
 ![Co developers](images/invitations.png)
@@ -59,7 +59,7 @@ The invite is send to the email address provided.
 
 #Using API keys in the documentation portal
 
-You cab use multiple applications, but mostly you will require just one. In the case of multiple applications you can switch api-keys from the dropdown at the top of the documentation page. Be aware that sandbox users are tied to an application, and therefore to a specific api-key.
+You can use multiple applications, but mostly you will require just one. In the case of multiple applications you can switch api-keys from the dropdown at the top of the documentation page. Be aware that sandbox users are tied to an application, and therefore to a specific api-key.
 
 
 ![API key usage](images/documentation1.png)
@@ -71,7 +71,7 @@ Most of the banking apis require you to login through oAuth2. Within the documen
 
 ![oauth](images/oauth-switch.png)
 
-When pushing this switch you will be asked for a scope. In this platform we only use one scope ('all'). After selecting the scope you will be directed to the login and consent page. The login credentials are provided through the sandbox rest service - GET/account. Be sure to note them down, or switch pages to enter the username and paasword on the login screen.
+When pushing this switch you will be asked for a scope. In this platform we only use one scope ('all'). After selecting the scope you will be directed to the login and consent page. The login credentials are provided through the sandbox rest service - GET/account. Be sure to note them down, or switch pages to enter the username and password on the login screen.
 After a succesfull login you will return to the documentation page, and the switch should be turned on :
 
 ![oauth](images/oauth-switch-on.png)
@@ -129,7 +129,7 @@ By calling the PUT/Transfer you will 'sign' the transaction with a tin-code and 
 
 **The transaction will debet the source account with the amount provided, and will credit the beneficiary account only when this account is present in your sandbox.  
  It is not possible to credit accounts in different sandboxes!**  
- The addressbook api in the sandbox section provides you with a list of accounts in your current sandbox. 
+ The addressbook api in the sandbox section provides you with a list of accounts in your current sandbox.
 
 
 #Sample application
