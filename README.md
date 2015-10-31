@@ -156,6 +156,18 @@ By calling the PUT/Transfer you will 'sign' the transaction with a tin-code and 
  It is not possible to credit accounts in different sandboxes!**  
  The addressbook api in the sandbox section provides you with a list of accounts in your current sandbox.
 
+**Retrieving transactions through POST/transaction**
+Sample message :
+```
+{
+ "productNumber": "113159895”,	<— vind je in de GET/product van de gebruiker
+ "currency": "EUR”,				<— Verplicht
+ "numberOfTransactions": 10, 
+ "fromDate": "2014-01-01”,		
+ "toDate": "2015-11-01"
+}
+```
+
 
 #Sample application
 BalanceSample is a cordova based example application for implementing a login sequence and getting a current account balance.
