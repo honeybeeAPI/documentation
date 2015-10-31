@@ -108,7 +108,15 @@ http://hackaton.eu-gb.mybluemix.net/oauth/token
 
 It is possible to use the implicit, or code authorization grant type for getting a token.
 
-An example cordova application is posted on github for using oAuth2 in a mobile app:
+** The token never exprires, so it is safe to store in your app**
+
+For speed, you can use the implicit flow, just call this url, and check the redirect url after login. This will contain your access token.
+
+```
+https://hackaton.eu-gb.mybluemix.net/dialog/authorize?client_id=<client_id>&redirect_uri=http://localhost&response_type=token&scope=all
+```
+
+An example cordova application is posted on github for using oAuth2 in a mobile app (using the code authorization grant):
 ```
 https://github.com/honeybeeAPI/BalanceSample
 ```
