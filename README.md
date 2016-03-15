@@ -16,7 +16,7 @@
 #How to get a key
 When you want to use the APIs in real-time you will need an user account in the honeybee environment.
 A user account can be retrieved at the **Rabobank desk**.
-![Change password](images/tafelkleed.png)
+![Change password](images/fintechathoneventbritebanner.png)
 
 A Rabobank representative  will provide the team leader with login credentials for managing his/her team. For this we will need a team name and a team leader email address.
 
@@ -162,7 +162,7 @@ Sample message :
 {
  "productNumber": "113159895”,	<— vind je in de GET/product van de gebruiker
  "currency": "EUR”,				<— Verplicht
- "numberOfTransactions": 10, 
+ "numberOfTransactions": 10,
  "fromDate": "2014-01-01”,		
  "toDate": "2015-11-01"
 }
